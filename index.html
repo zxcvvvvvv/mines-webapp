@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Mines by TryGamble</title>
   <style>
     body {
@@ -9,37 +10,53 @@
       color: white;
       font-family: sans-serif;
       text-align: center;
+      margin: 0;
+      padding: 0;
     }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-top: 20px;
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(5, 60px);
-      grid-gap: 10px;
-      justify-content: center;
-      margin-top: 40px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      padding: 20px;
+      max-width: 90vw;
+      margin: 0 auto;
     }
+
     .cell {
       background: #1b2139;
       border: 2px solid #2e3860;
-      width: 60px;
-      height: 60px;
-      font-size: 30px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      font-size: 1.5rem;
       cursor: pointer;
       border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .cell.open {
       background: #28a745;
     }
+
     .cell.mine {
       background: #dc3545;
     }
+
     button {
       background: #007bff;
       border: none;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 10px;
-      font-size: 16px;
-      margin-top: 20px;
+      font-size: 1rem;
+      margin: 20px auto;
       cursor: pointer;
     }
   </style>
@@ -77,7 +94,7 @@
       cell.onclick = null;
     }
 
-    // запускаем игру сразу
+    // Запускаем игру сразу
     startGame();
   </script>
 </body>
