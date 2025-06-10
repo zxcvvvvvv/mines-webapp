@@ -19,19 +19,23 @@
       margin-top: 20px;
     }
 
+    .grid-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-      padding: 20px;
-      max-width: 90vw;
-      margin: 0 auto;
+      gap: 8px;
+      width: 90vw;
+      max-width: 400px;
     }
 
     .cell {
       background: #1b2139;
       border: 2px solid #2e3860;
-      width: 100%;
       aspect-ratio: 1 / 1;
       font-size: 1.5rem;
       cursor: pointer;
@@ -63,7 +67,9 @@
 </head>
 <body>
   <h1>💣 Mines Game</h1>
-  <div class="grid" id="grid"></div>
+  <div class="grid-container">
+    <div class="grid" id="grid"></div>
+  </div>
   <button onclick="startGame()">Play Mines</button>
 
   <script>
@@ -94,7 +100,6 @@
       cell.onclick = null;
     }
 
-    // Запускаем игру сразу
     startGame();
   </script>
 </body>
