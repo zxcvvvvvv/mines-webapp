@@ -1,75 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta charset="UTF-8">
   <title>Mines by TryGamble</title>
   <style>
     body {
-      background: #0b0f1c;
+      background: linear-gradient(135deg, #0b0f1c, #1e2746);
       color: white;
       font-family: sans-serif;
       text-align: center;
       margin: 0;
       padding: 0;
     }
-
-    h1 {
-      font-size: 1.8rem;
-      margin-top: 20px;
-    }
-
-    .grid-container {
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-    }
-
     .grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
-      width: 90vw;
-      max-width: 400px;
+      grid-template-columns: repeat(5, 60px);
+      grid-gap: 10px;
+      justify-content: center;
+      margin-top: 40px;
     }
-
     .cell {
       background: #1b2139;
       border: 2px solid #2e3860;
-      aspect-ratio: 1 / 1;
-      font-size: 1.5rem;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
       cursor: pointer;
       border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-
     .cell.open {
       background: #28a745;
     }
-
     .cell.mine {
       background: #dc3545;
     }
-
     button {
       background: #007bff;
       border: none;
       color: white;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-radius: 10px;
-      font-size: 1rem;
-      margin: 20px auto;
+      font-size: 16px;
+      margin-top: 20px;
       cursor: pointer;
+    }
+
+    @media (max-width: 400px) {
+      .grid {
+        grid-template-columns: repeat(5, 50px);
+        grid-gap: 8px;
+      }
+      .cell {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+      }
     }
   </style>
 </head>
 <body>
   <h1>💣 Mines Game</h1>
-  <div class="grid-container">
-    <div class="grid" id="grid"></div>
-  </div>
+  <div class="grid" id="grid"></div>
   <button onclick="startGame()">Play Mines</button>
 
   <script>
