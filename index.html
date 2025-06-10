@@ -3,24 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>Mines by TryGamble</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background: linear-gradient(135deg, #0b0f1c, #1e2746);
+      background: url('https://images.unsplash.com/photo-1517817748494-6d7bdc10c5c3?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: white;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       text-align: center;
       margin: 0;
       padding: 0;
+    }
+    .overlay {
+      background: rgba(11, 15, 28, 0.8);
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+    }
+    h1 {
+      margin-top: 40px;
+      font-size: 2rem;
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(5, 60px);
       grid-gap: 10px;
       justify-content: center;
-      margin-top: 40px;
+      margin: 30px auto;
+      max-width: 100%;
     }
     .cell {
-      background: #1b2139;
+      background: #1b2139cc;
       border: 2px solid #2e3860;
       width: 60px;
       height: 60px;
@@ -38,30 +56,20 @@
       background: #007bff;
       border: none;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 10px;
       font-size: 16px;
-      margin-top: 20px;
       cursor: pointer;
-    }
-
-    @media (max-width: 400px) {
-      .grid {
-        grid-template-columns: repeat(5, 50px);
-        grid-gap: 8px;
-      }
-      .cell {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-      }
     }
   </style>
 </head>
 <body>
-  <h1>💣 Mines Game</h1>
-  <div class="grid" id="grid"></div>
-  <button onclick="startGame()">Play Mines</button>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>💣 Mines Game</h1>
+    <div class="grid" id="grid"></div>
+    <button onclick="startGame()">Play Mines</button>
+  </div>
 
   <script>
     let mineIndex = -1;
