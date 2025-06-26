@@ -5,7 +5,10 @@
   <title>Mines by TryGamble</title>
   <style>
     body {
-      background: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: white;
       font-family: sans-serif;
       text-align: center;
@@ -114,7 +117,6 @@
       grid.innerHTML = '';
       mineIndices = [];
 
-      // Генерируем уникальные позиции мин
       while (mineIndices.length < bombCount) {
         let rand = Math.floor(Math.random() * 25);
         if (!mineIndices.includes(rand)) {
