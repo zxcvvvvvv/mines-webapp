@@ -4,24 +4,41 @@
   <meta charset="UTF-8">
   <title>Mines by TryGamble</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+    }
     body {
       background-image: url('background.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       color: white;
-      font-family: sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 20px;
     }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(5, 60px);
       grid-gap: 10px;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 20px;
+      max-width: 320px;
     }
+
     .cell {
       background: #1b2139;
       border: 2px solid #2e3860;
@@ -31,12 +48,15 @@
       cursor: pointer;
       border-radius: 12px;
     }
+
     .cell.open {
       background: #28a745;
     }
+
     .cell.mine {
       background: #dc3545;
     }
+
     button {
       background: #007bff;
       border: none;
@@ -46,6 +66,7 @@
       font-size: 16px;
       margin-top: 20px;
       cursor: pointer;
+      max-width: 300px;
     }
 
     .bomb-selector {
@@ -54,6 +75,7 @@
       justify-content: center;
       align-items: center;
       gap: 15px;
+      max-width: 320px;
     }
 
     .selector-box {
@@ -63,6 +85,8 @@
       display: flex;
       align-items: center;
       gap: 15px;
+      width: 100%;
+      justify-content: space-between;
     }
 
     .arrow {
