@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Mines by TryGamble</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
       box-sizing: border-box;
@@ -14,20 +15,26 @@
       font-family: sans-serif;
     }
     body {
-      background-image: url('background.jpg');
+      background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .game-container {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding-top: 20px;
+      max-width: 90vw;
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin-top: 0;
+      font-size: 24px;
     }
 
     .grid {
@@ -36,7 +43,6 @@
       grid-gap: 10px;
       justify-content: center;
       margin-top: 20px;
-      max-width: 320px;
     }
 
     .cell {
@@ -66,16 +72,14 @@
       font-size: 16px;
       margin-top: 20px;
       cursor: pointer;
-      max-width: 300px;
     }
 
     .bomb-selector {
-      margin-top: 30px;
+      margin-top: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 15px;
-      max-width: 320px;
     }
 
     .selector-box {
@@ -85,8 +89,6 @@
       display: flex;
       align-items: center;
       gap: 15px;
-      width: 100%;
-      justify-content: space-between;
     }
 
     .arrow {
@@ -103,23 +105,26 @@
     .bomb-label {
       font-size: 14px;
       color: #aaa;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>💣 Mines Game</h1>
+  <div class="game-container">
+    <h1>💣 Mines Game</h1>
 
-  <div class="grid" id="grid"></div>
-  <button onclick="startGame()">Play Mines</button>
+    <div class="grid" id="grid"></div>
+    <button onclick="startGame()">Play Mines</button>
 
-  <div class="bomb-selector">
-    <div class="selector-box">
-      <span class="arrow" onclick="changeBombs(-1)">&#8592;</span>
-      <div>
-        <div class="bomb-count" id="bombCount">1</div>
-        <div class="bomb-label">Bomb</div>
+    <div class="bomb-selector">
+      <div class="selector-box">
+        <span class="arrow" onclick="changeBombs(-1)">&#8592;</span>
+        <div>
+          <div class="bomb-count" id="bombCount">1</div>
+          <div class="bomb-label">Bomb</div>
+        </div>
+        <span class="arrow" onclick="changeBombs(1)">&#8594;</span>
       </div>
-      <span class="arrow" onclick="changeBombs(1)">&#8594;</span>
     </div>
   </div>
 
