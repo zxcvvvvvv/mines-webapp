@@ -146,7 +146,7 @@
   </style>
 </head>
 <body>
-  <div class="online-counter" id="onlineCounter">🔥 17 игроков онлайн</div>
+  <div class="online-counter" id="onlineCounter">🔥 17 players online</div>
   <a href="https://1wcjlr.com/v3/2158/1win-mines?p=8a52" target="_blank" class="top-link">🔗 Try on Website</a>
 
   <div class="game-container">
@@ -216,14 +216,14 @@
       const el = document.getElementById('onlineCounter');
       let current = parseInt(el.dataset.count || 17);
 
-      const change = Math.floor(Math.random() * 7) - 3; // -3 to +3
+      const change = Math.floor(Math.random() * 7) - 3;
       let next = current + change;
 
       if (next < 12) next = 12;
       if (next > 88) next = 88;
 
       el.dataset.count = next;
-      el.innerHTML = `🔥 ${next} игроков онлайн`;
+      el.innerHTML = `🔥 ${next} players online`;
 
       const delay = Math.floor(Math.random() * 10000) + 5000;
       setTimeout(updateOnlineCounter, delay);
@@ -236,5 +236,6 @@
   </script>
 </body>
 </html>
+
 
 
