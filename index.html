@@ -80,8 +80,6 @@
 
     .card-back.safe {
       background: linear-gradient(to bottom, #FFCC33, #FF9900);
-      color: white;
-      font-size: 28px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
@@ -224,7 +222,10 @@
           back.textContent = '💣';
         } else {
           back.classList.add('safe');
-          back.textContent = '⭐';
+          back.innerHTML = `
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2l2.9 6.4L22 9.3l-5 5.1L18.2 22 12 18.5 5.8 22 7 14.4 2 9.3l7.1-0.9L12 2z"/>
+            </svg>`;
         }
 
         inner.appendChild(front);
